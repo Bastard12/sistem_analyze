@@ -1,22 +1,16 @@
 import pandas as pd
 
 
-def find_in_csv(path ,x , y):
-    data = pd.read_csv(path)  # path to csv файл
-    print(data.iloc[x][y])
-
+def task1(path, x, y):
+    if path[-3:] == 'csv':
+        data = pd.read_csv(path)  # path to csv файл
+        print(data.iloc[x][y])
+    else:
+        data = pd.read_json(path)  # path to json файл
+        print(data.iloc[x][y])  # .iloc[x][y]
     return True
 
-def find_in_json(path ,x , y):
-    data = pd.read_json(path) # path to json файл
-    print(data.iloc[x][y]) #.iloc[x][y]
-
-    return True
 
 inc = list(input().split())
-x, y, path = int(inc[0]), int(inc[1]), inc[2]
-if path[-3:] == 'csv':
-    find_in_csv(path, x, y)
-else:
-    find_in_json(path, x, y)
 
+task1(inc[0], int(inc[1]), int(inc[2]))
