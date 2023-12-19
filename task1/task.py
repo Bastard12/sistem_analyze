@@ -1,7 +1,7 @@
 import pandas as pd
 
 
-def task1(path, x, y):
+def task(path, x, y):
     if path[-3:] == 'csv':
         data = pd.read_csv(path)  # path to csv файл
         print(data.iloc[x][y])
@@ -13,4 +13,4 @@ def task1(path, x, y):
 
 inc = list(input().split())
 
-task1(inc[0], int(inc[1]), int(inc[2]))
+task(inc[0], int(inc[1]), int(inc[2]))
